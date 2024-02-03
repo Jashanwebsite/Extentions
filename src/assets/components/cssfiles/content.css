@@ -1,0 +1,67 @@
+.content {
+  position: relative;
+  height: 100vh;
+  background-color: transparent;
+  width: 100%;
+}
+.bubble_1 {
+  /* border: 2px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 200px;
+  top: -80px;
+  left: 50px;
+  animation: bouncing_note 90s linear 0s infinite;
+}
+.image_note {
+  /* border: 20px solid black; */
+  border-radius: 50%;
+}
+@keyframes bouncing_note {
+  0% {
+    top: -80px;
+    left: 50px;
+  }
+  15% {
+    top: 250px;
+    left: 100px;
+  }
+  30% {
+    top: 10px;
+    left: 400px;
+  }
+  45%{
+    top: 250px;
+    left: 600px;
+  }
+  60%{
+    top: 80px;
+    left: 800px;
+  }
+  75%{
+    top: 250px;
+    left: 1070px;
+  }
+  90%{
+    
+    top: 30px;
+    left: 1500px;
+  }
+  95%{
+    display: none;
+    left: 1500px ;
+    top: -100px;
+  }
+  97%{
+    display: none;
+    left: -100px ;
+    top: -140px;
+  }
+  100%{
+    /* display: ; */
+    top: -80px;
+    left: 50px; 
+  }
+}
