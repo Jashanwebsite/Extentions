@@ -6,10 +6,11 @@ import Header from "./Header";
 import Github from "./svg/Github";
 import Chatgpt from "./svg/Chatgpt";
 import Name from "./Name";
+import Whatsapp from "./svg/Whatsapp";
 
 function Content() {
   const [githubdisplay, setgithubdisplay] = useState(false);
-  // const [youtubedisplay, setyoutubedisplay] = useState(false);
+  const [whatsappdisplay, setwhatsappdisplay] = useState(false);
   const [chatgptdisplay, setchatgptdisplay] = useState(false);
   const [spotifydisplay, setspotifydisplay] = useState(false);
   const [, set] = useState(false);
@@ -29,12 +30,12 @@ function Content() {
     setspotifydisplay(false);
     // console.log(false);
   };
-  const enter = () => {
-    set(true);
+  const whatsappenter = () => {
+    setwhatsappdisplay(true);
     // console.log(false);
   };
-  const leave = () => {
-    set(false);
+  const whatsappleave = () => {
+    setwhatsappdisplay(false);
     // console.log(false);
   };
   const chatgptenter = () => {
@@ -47,15 +48,30 @@ function Content() {
   };
   return (
     <>
-      { githubdisplay  || chatgptdisplay || spotifydisplay ?"" :<Header/>}
+      { githubdisplay  || chatgptdisplay || whatsappdisplay || spotifydisplay ?"" :<Header/>}
+    {/* <Whatsapp></Whatsapp> */}
     <div className="content">
+    <a
+        href="https://web.whatsapp.com/"
+        onMouseEnter={whatsappenter}
+        onMouseLeave={whatsappleave}
+        className={`${
+            spotifydisplay || chatgptdisplay || githubdisplay
+            ? "none"
+            : ""
+        }`}
+        target="_blank"
+      >
+      
+        <Whatsapp/>
+      </a>
       <a
         style={{ height: "100px" }}
         href="https://github.com/Jashanwebsite/"
         onMouseEnter={displaygithub}
         onMouseLeave={nondisplaygithub}
         className={`${
-            spotifydisplay || chatgptdisplay 
+            spotifydisplay || chatgptdisplay || whatsappdisplay
             ? "none"
             : ""
         }`}
@@ -69,7 +85,7 @@ function Content() {
         onMouseEnter={chatgptenter}
         onMouseLeave={chatgptleave}
         className={`${
-          githubdisplay || spotifydisplay  
+          githubdisplay || spotifydisplay  || whatsappdisplay
             ? "none"
             : ""
         }`}
@@ -82,7 +98,7 @@ function Content() {
         onMouseEnter={spotifyenter}
         onMouseLeave={spotifyleave}
         className={`${
-          githubdisplay  || chatgptdisplay 
+          githubdisplay  || chatgptdisplay || whatsappdisplay
             ? "none"
             : ""
         }`}
@@ -90,7 +106,7 @@ function Content() {
       >
         <Spotify  />
       </a>
-      <div style={{display:`${ githubdisplay  || chatgptdisplay || spotifydisplay ?"none" :""}`}}>
+      <div style={{display:`${ githubdisplay  || whatsappdisplay || chatgptdisplay || spotifydisplay ?"none" :""}`}}>
       <Name/>  
       </div>
      

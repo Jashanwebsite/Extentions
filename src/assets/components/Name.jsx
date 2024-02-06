@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./cssfiles/name.css";
 
 function Name() {
-  const [animation, setanimation] = useState(true);
-
+  const [animation, setanimation] = useState(false);
+    
   useEffect(() => {
     const starting = setInterval(() => {
       const j = document.getElementById("j");

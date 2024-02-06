@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Newtab",
+    "description": "This is a new tab created by me",
+    "permissions": ["webNavigation"],
+    "version": "1.0.0",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    }
+}

@@ -9,7 +9,7 @@ function Header() {
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             console.log(address);
-            window.open(`https://www.google.com/search?q=${address}&oq=${address}`);
+            window.open(`https://www.google.com/search?q=${address}`,"_self");
             setaddress("")
         }
     };
