@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    /* transition:all 400ms linear ; */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100px;
+    /* background-color: blue; */
+    width: 500px;
+    top: 200px;
+    left: 300px;
+}
+@font-face {
+    font-family:  jashan ;
+    src: url("../fonts/fontfamily1/jashan.ttf");
+ 
+  
+}
+h1{
+    font-family: jashan;
+    color: #212121;
+    filter: drop-shadow(0px 0px 10px  white);
+    letter-spacing: 50px;
+    font-weight: lighter;
+    font-size:180px;
+}
+.j{
+    color: white;
+        filter: drop-shadow(0px 0px 10px  white);
+}
+.alltime{
+    color: white;
+        filter: drop-shadow(0px 0px 10px  white);
+}
