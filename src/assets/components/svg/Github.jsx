@@ -3,8 +3,8 @@ import "../cssfiles/content.css"
 function Github() {
   return (
 
-	<svg version="1.1" className='github' id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	viewBox="0 0 318 159" enable-background="new 0 0 318 159" xml:space="preserve">
+	<svg version="1.1" className='github' id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 318 159" enableBackground="new 0 0 318 159" xmlSpace="preserve">
 	<defs>
 	<linearGradient
 	id="github"

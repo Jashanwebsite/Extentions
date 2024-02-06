@@ -12,23 +12,7 @@
   color :rgb(172, 169, 0);
   width: 100%;
 }
-.inotebook {
-  display: flex;
-  transition: all 300ms ;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  height: 150px;
-  top: -20px;
-  left: 70px;
-  filter: drop-shadow(0 0 1px  #c6a96c);
-  /* animation: bouncing_note 90s linear 50s infinite; */
-}
-.inotebook:hover{
-  height: 180px;
-  filter: drop-shadow( 0 -120px  1px   #0f8dc7) drop-shadow( 0 120px  1px   #c6a96c);
-  
-}
+
 .github {
   transition: all 400ms ;
   display: flex;
@@ -37,13 +21,13 @@
   position: absolute;
   height: 150px;
   top: -30px;
-  left: 530px;
+  left: 370px;
   /* animation: bouncing_note 90s linear 50s infinite; */
   /* filter: drop-shadow(0 0 2px #3e5151); */
 }
 .github:hover {
-  height: 180px;
-  left: 500px;
+  height: 200px;
+  left: 300px;
   filter: drop-shadow(0 0 2px #3e5151) drop-shadow( 0px 90px 2px #3e5151) drop-shadow( 0px -90px 2px #3e5151);
 }
 
@@ -52,24 +36,20 @@
   position: absolute;
   height: 200px;
   top: -50px;
-  left: 250px;
+  left: 20px;
   filter: drop-shadow(0px 0px 2px #073b4c)
-}
-.chatgpt:hover  {
-  height: 250px;
-  left: 200px;
-  /* transform: translate(-50%,-50%); */
-  filter:  drop-shadow(0px 0px 1px #c9ff05) drop-shadow(0px 100px 2px #99f2c880) drop-shadow(0px -100px 2px #99f2c875);
+  drop-shadow(0px 0px 1px #0a995696);
 
 }
-.chatgpttext{
-  transition: all 400ms;
-  position: absolute;
-  height: 100px;
-  top: 10px;
-  left: 450px;
-  filter: drop-shadow(0px 0px 2px #073b4c) 
+.chatgpt:hover  {
+  height: 300px;
+  top: -100px;
+  left: -80px;
+  /* transform: translate(-50%,-50%); */
+  filter:   drop-shadow(0px 100px 2px #99f2c880) drop-shadow(0px -100px 2px #99f2c875);
+
 }
+
 .Spotify {
   transition: all 400ms ;
   display:flex;

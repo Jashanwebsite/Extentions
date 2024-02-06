@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./cssfiles/content.css";
-// import Youtube from "./svg/youtube";
 import Spotify from "./svg/Spotify";
-import Inotebook from "./svg/inotebook";
+import "../../App.css";
+import Header from "./Header";
 import Github from "./svg/Github";
 import Chatgpt from "./svg/Chatgpt";
 import Name from "./Name";
@@ -12,7 +12,7 @@ function Content() {
   // const [youtubedisplay, setyoutubedisplay] = useState(false);
   const [chatgptdisplay, setchatgptdisplay] = useState(false);
   const [spotifydisplay, setspotifydisplay] = useState(false);
-  const [inotebook, setinotebook] = useState(false);
+  const [, set] = useState(false);
   const displaygithub = () => {
     setgithubdisplay(true);
     // console.log("ture");
@@ -29,12 +29,12 @@ function Content() {
     setspotifydisplay(false);
     // console.log(false);
   };
-  const inotebookenter = () => {
-    setinotebook(true);
+  const enter = () => {
+    set(true);
     // console.log(false);
   };
-  const inotebookleave = () => {
-    setinotebook(false);
+  const leave = () => {
+    set(false);
     // console.log(false);
   };
   const chatgptenter = () => {
@@ -46,30 +46,22 @@ function Content() {
     // console.log(false);
   };
   return (
+    <>
+      { githubdisplay  || chatgptdisplay || spotifydisplay ?"" :<Header/>}
     <div className="content">
       <a
         style={{ height: "100px" }}
-        href="https://notebook-v2wu.onrender.com/"
-        onMouseEnter={inotebookenter}
-        onMouseLeave={inotebookleave}
+        href="https://github.com/Jashanwebsite/"
+        onMouseEnter={displaygithub}
+        onMouseLeave={nondisplaygithub}
         className={`${
-          githubdisplay || spotifydisplay || chatgptdisplay 
+            spotifydisplay || chatgptdisplay 
             ? "none"
             : ""
         }`}
         target="_blank"
       >
-        <Inotebook  />
-      </a>
-      <a
-        onMouseEnter={displaygithub}
-        onMouseLeave={nondisplaygithub}
-        className={`${
-          spotifydisplay || chatgptdisplay || inotebook ? "none" : ""
-        }`}
-        target="_blank"
-        href="https://github.com/Jashanwebsite"
-      >
+      
         <Github  />
       </a>
       <a
@@ -77,7 +69,7 @@ function Content() {
         onMouseEnter={chatgptenter}
         onMouseLeave={chatgptleave}
         className={`${
-          githubdisplay || spotifydisplay  || inotebook
+          githubdisplay || spotifydisplay  
             ? "none"
             : ""
         }`}
@@ -90,7 +82,7 @@ function Content() {
         onMouseEnter={spotifyenter}
         onMouseLeave={spotifyleave}
         className={`${
-          githubdisplay  || chatgptdisplay || inotebook
+          githubdisplay  || chatgptdisplay 
             ? "none"
             : ""
         }`}
@@ -98,8 +90,12 @@ function Content() {
       >
         <Spotify  />
       </a>
-      <Name/>
+      <div style={{display:`${ githubdisplay  || chatgptdisplay || spotifydisplay ?"none" :""}`}}>
+      <Name/>  
+      </div>
+     
     </div>
+    </>
   );
 }
 
