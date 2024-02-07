@@ -31,7 +31,7 @@ function Header() {
         <img src={viteLogo} className="logo" alt="Vite logo" />
       </a>
       <div className="input_container">
-        <input onKeyDown={handleKeyDown} value={address} onChange={onchange} type="text" name="text" id="input" />
+        <input    autocomplete="off" onKeyDown={handleKeyDown} value={address} onChange={onchange} type="text" name="text" id="input" />
        
         <svg
         onClick={onclick}
