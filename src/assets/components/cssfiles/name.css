@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/lcd');
 .container{
     display: flex;
     /* transition:all 400ms linear ; */
@@ -8,7 +9,21 @@
     /* background-color: blue; */
     width: 500px;
     top: 200px;
-    left: 300px;
+
+    --_bloom:#fcfbf9;
+    --_y1:#fae8a5;
+    --_y2:#fbd608;
+
+    --_o1:#ff8f0c;
+    --_o2:#e74702;
+    --_o3:#b32801;
+
+    --mw1:#d0d5d7;
+    
+    --m1:#fdea09;
+    --m2:#e46703;
+    --m3:#ac2a04;
+    left: 350px;
 }
 @font-face {
     font-family:  jashan ;
@@ -17,19 +32,26 @@
   
 }
 h1{
-    font-family: jashan;
+    padding-left: 5px;
+    font-family: 'LCD', sans-serif;
+    font-family: 'LCD2', sans-serif;
+    font-family: 'LCDMono2', sans-serif;
+    font-family: 'LCDMono', sans-serif;
+    font-family: 'Digitalism', sans-serif;
     color: #212121;
+    text-transform: capitalize;
     filter: drop-shadow(0px 0px 10px  white);
-    letter-spacing: 50px;
+    letter-spacing: 80px;
     font-weight: lighter;
     font-size:180px;
     user-select: none;
 }
 .animation{
-    color: white;
-        filter: drop-shadow(0px 0px 10px  rgba(182, 25, 25, 0.705));
+    color:white;
+    filter: drop-shadow(0px 0px 4px var(--m3)) drop-shadow(0px 0px 10px var(--m2)) drop-shadow(0px 0px 10px var(--m1));
+
 }
-.doneanimation{
+.doneanimation {
     color: white;
-        filter: drop-shadow(0px 0px 10px  white);
+    filter: drop-shadow(0px 0px 10px var(--m3)) drop-shadow(0px 0px 10px var(--m2)) drop-shadow(0px 0px 10px var(--m1));
 }

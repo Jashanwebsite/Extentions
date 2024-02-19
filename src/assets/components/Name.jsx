@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./cssfiles/name.css";
+import Clock from "./Clock";
+import Clock2 from "./Clock2";
 
 function Name() {
   const [animation, setanimation] = useState(false);
@@ -146,7 +148,11 @@ function Name() {
 
   //  components ---------------------------------------------------------------------
   return (
+    <div>
+      <Clock></Clock>
+      <Clock2></Clock2>
     <div className="container" id="container">
+      
       <h1 className="j  " id="j">
         j
       </h1>
@@ -165,6 +171,7 @@ function Name() {
       <h1 className="n  " id="n">
         n
       </h1>
+    </div>
     </div>
   );
 }
