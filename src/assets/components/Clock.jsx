@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./cssfiles/Clock.css"
+import "./cssfiles/Clock.css";
 function Clock() {
   useEffect(() => {
     function updateTimeAndDate() {
@@ -33,21 +33,35 @@ function Clock() {
     }
     updateTimeAndDate();
     const intervalId = setInterval(updateTimeAndDate, 60000);
-
+    
     const timeoutId = setTimeout(() => {
       document.querySelector(".clock").classList.toggle("off");
       console.log("timedone");
     }, 3000);
 
-    const toggleClockInterval = setInterval(() => {
-      document.querySelector(".clock").classList.toggle("off");
-      console.log("timedone");
-    }, 90200);
+    document.addEventListener("visibilitychange", () => {
+      const clockElement = document.querySelector(".clock");
+      if (clockElement) {
+        if (!document.hidden) {
+          setTimeout(() => {
+            clockElement.classList.remove("off");
+            console.log("timedone");
+          }, 2000);
+          return null
+        }  if (document.hidden) {
+          clockElement.classList.add("off");
+          return null
+        }
+      } else {
+        console.error("Clock element not found in the document.");
+      }
+    });
+    
 
     return () => {
       clearInterval(intervalId);
       clearTimeout(timeoutId);
-      clearInterval(toggleClockInterval);
+      // clearInterval(toggleClockInterval);
     };
   }, []); // Empty dependency array ensures useEffect runs only once after initial render
 
@@ -147,7 +161,7 @@ function Clock() {
                 <div id="char32">0</div>
               </div>
             </div>
-            <div style={{height: 0.2+"em"}}></div>
+            <div style={{ height: 0.2 + "em" }}></div>
             <div class="small-row">
               <div class="row">
                 <div class="col">

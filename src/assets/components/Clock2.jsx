@@ -41,15 +41,28 @@ function Clock() {
           console.log("timedone");
         }, 3000);
     
-        const toggleClockInterval = setInterval(() => {
-          document.querySelector(".clock2").classList.toggle("off2");
-          console.log("timedone");
-        }, 90200);
+        document.addEventListener("visibilitychange", () => {
+          const clockElement = document.querySelector(".clock2");
+          if (clockElement) {
+            if (!document.hidden) {
+              setTimeout(() => {
+                clockElement.classList.remove("off2");
+                console.log("timedone");
+              }, 2000);
+              return null
+            }  if (document.hidden) {
+              clockElement.classList.add("off2");
+              return null
+            }
+          } else {
+            console.error("Clock element not found in the document.");
+          }
+        });
+    
     
         return () => {
           clearInterval(intervalId);
           clearTimeout(timeoutId);
-          clearInterval(toggleClockInterval);
         };
       }, []); // Empty dependency array ensures useEffect runs only once after initial render
     
