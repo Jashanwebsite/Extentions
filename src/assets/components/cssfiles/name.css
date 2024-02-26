@@ -33,16 +33,12 @@
 }
 h1{
     padding-left: 5px;
-    font-family: 'LCD', sans-serif;
-    font-family: 'LCD2', sans-serif;
-    font-family: 'LCDMono2', sans-serif;
-    font-family: 'LCDMono', sans-serif;
-    font-family: 'Digitalism', sans-serif;
+    font-family: Brush Script;
     color: #212121;
     text-transform: capitalize;
     filter: drop-shadow(0px 0px 10px  white);
     letter-spacing: 80px;
-    font-weight: lighter;
+    font-weight: 100;
     font-size:150px;
     user-select: none;
 }
