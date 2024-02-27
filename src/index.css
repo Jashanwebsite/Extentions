@@ -63,7 +63,7 @@ a:hover {
 }
 .search_svg:hover{
 
-  border: 2px solid white;
+  /* border: 2px solid white; */
 
   box-shadow:inset 0 0 12px 1px #fcfcfcaa;
 }

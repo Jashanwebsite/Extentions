@@ -4,8 +4,21 @@
   will-change: filter;
   transition: all linear 400ms;
 }
+.logo.vite {
+  height: 13em;
+  position: absolute;
+  padding: 2em;
+  top: -5px;
+  left: -70px;
+  z-index: 15;
+  will-change: filter;
+  transition: all linear 400ms;
+}
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+}
+.vite:hover{
+  filter: drop-shadow(0 0 5em #06e448aa); 
 }
 .logo.react:hover {
   animation: logo-spin infinite 1s linear;

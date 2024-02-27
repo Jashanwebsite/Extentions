@@ -27,8 +27,8 @@ function Header() {
   return (
     <header className="header_container">
     <div className="logo_container">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src={viteLogo} className="logo" alt="Vite logo" />
+      <a href="https://cloud.mongodb.com/v2/65880f96eb48cd586b75aea1#/overview" target="_blank">
+        <img  src={viteLogo} className="logo vite" alt="Vite logo" />
       </a>
       <div className="input_container">
         <input    autocomplete="off" onKeyDown={handleKeyDown} value={address} onChange={onchange} type="text" name="text" id="input" />
