@@ -1,18 +1,21 @@
 .logo {
-  height: 9em;
-  padding: 2em;
+  height: 10em;
+  position: absolute;
+  /* padding: 2em; */
+  top: 35px;
+  right: 0px;
   will-change: filter;
-  transition: all linear 400ms;
+  transition: all linear .4s;
 }
 .logo.vite {
-  height: 13em;
+  height: 20em;
   position: absolute;
   padding: 2em;
-  top: -5px;
-  left: -70px;
+  top: -45px;
+  left: -76px;
   z-index: 15;
   will-change: filter;
-  transition: all linear 400ms;
+  transition: all linear .4s;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
