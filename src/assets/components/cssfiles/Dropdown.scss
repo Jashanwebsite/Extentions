@@ -1,0 +1,106 @@
+.menu {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 100px;
+    list-style-type: none;
+
+    span {
+      display: block;
+      margin: 0;
+      padding: 16px 25px;
+      color: #fff;
+       text-decoration: none;
+       background-color: transparent;
+    }
+    li {
+      position: relative;
+      float: left;
+      margin: 0;
+      border-left: 1px solid #eee;
+      perspective: 200;
+  
+      &:first-child {
+        border-left: none;
+      }
+      &.parent {
+        &:before {
+          content: '';
+          z-index: 200;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-top: -4px;
+          margin-left: -20px;
+          display: block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 8px 20px 0 20px;
+          border-color: transparent transparent transparent transparent;
+          transition: margin-top .1s ease-out;
+        }
+      }
+      &:hover,
+      &:focus {
+        & > span {
+          text-decoration: none;
+          color: #fff;
+          background-color: transparent;
+        }
+        &:before {
+          margin-top: 0;
+          border-top-color: transparent;
+        }
+        .children {
+          opacity: 1;
+          transform: rotateX(0) translateZ(0);
+        }
+      }
+    }
+    .children {
+      opacity: 0;
+      backface-visibility: hidden;
+      transform: rotateX(-90deg);
+      transform-style: preserve-3d;
+      transform-origin: top center;
+      transition: transform .4s cubic-bezier(.17,.67,.59,1.21), opacity .1s .1s;
+  
+      z-index: 100;
+       list-style-type: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 200px;
+      margin: 0;
+      padding: 10px 0;
+      background-color: transparent;
+      box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);
+       text-align: left;
+  
+      li {
+        float: none;
+      }
+      span {
+        background-color: transparent;
+  
+        &:hover,
+        &:focus {
+          color: #fff;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  body {
+    // background-color: #584E4A;
+    text-align: center;
+  }

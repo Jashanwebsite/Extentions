@@ -3,9 +3,12 @@ import "../../App.css";
 import reactLogo from "../react.svg";
 import viteLogo from "/vite.svg";
 import { useState } from 'react';
+import'./cssfiles/Dropdown.scss';
 
-function Header() {
+
+function Header({checkboxStates,setCheckboxStates}) {
     const [address,setaddress] = useState("")
+    
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             console.log(address);
@@ -13,6 +16,12 @@ function Header() {
             setaddress("")
         }
     };
+    const handleCheckboxChange = (checkboxId) => {
+      setCheckboxStates(prevState => ({
+          ...prevState,
+          [checkboxId]: !prevState[checkboxId],
+      }));
+  }
 
     const  onchange =  (e)=>{
         e.preventDefault();
@@ -24,9 +33,13 @@ function Header() {
         window.open(`https://www.google.com/search?q=${address}&oq=${address}`)
         setaddress("")
     }
+    console.log(document.getElementById("upperlogo1"))
   return (
     <header className="header_container">
-    <div className="logo_container">
+   { 
+    // document.getElementById("upperlogo1").checked
+    checkboxStates.upperlogo1
+    && <div className="logo_container">
       <a href="https://cloud.mongodb.com/v2/65880f96eb48cd586b75aea1#/overview" target="_blank">
         <img  src={viteLogo} className="logo vite" alt="Vite logo" />
       </a>
@@ -49,7 +62,57 @@ function Header() {
       <a href="https://react.dev" target="_blank">
         <img src={reactLogo} className="logo react" alt="React logo" />
       </a>
-    </div>
+    </div > }
+    
+    <div className="absolute left-1/2 -translate-x-1/2" style={{ top: "-100px" }}>
+                <ul className="menu cleafix">
+                    <li className="parent">
+                        <span >change state</span>
+                        <ul className="children">
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name=""
+                                    id="upperlogo1"
+                                    checked={checkboxStates.upperlogo1}
+                                    onChange={() => handleCheckboxChange('upperlogo1')}
+                                />
+                                <span >upper logos</span>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name=""
+                                    id="clock"
+                                    checked={checkboxStates.clock}
+                                    onChange={() => handleCheckboxChange('clock')}
+                                />
+                                <span >clock</span>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name=""
+                                    id="name"
+                                    checked={checkboxStates.name}
+                                    onChange={() => handleCheckboxChange('name')}
+                                />
+                                <span >name</span>
+                            </li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name=""
+                                    id="content"
+                                    checked={checkboxStates.content}
+                                    onChange={() => handleCheckboxChange('content')}
+                                />
+                                <span >content</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
   </header>
   )
 }

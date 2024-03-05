@@ -3,7 +3,7 @@ import "./cssfiles/name.css";
 import Clock from "./Clock";
 import Clock2 from "./Clock2";
 
-function Name() {
+function Name({clock,name}) {
   // const [animation, setanimation] = useState(false);
     
   // useEffect(() => {
@@ -149,31 +149,35 @@ function Name() {
   //  components ---------------------------------------------------------------------
   return (
     <div>
-      <Clock></Clock>
-      <Clock2></Clock2>
-    <div className="container" id="container">
+      <div className={`${clock? "visible":"invisible"}` }>
+   <Clock ></Clock>
+      </div>
+      <div className={`${clock? "visible":"invisible"}` }>
+   <Clock2 className="invisible"></Clock2>
+      </div>
+    { name&& <div className="container" id="container">
       
-      <h1 className="j  " id="j">
+      <h1 className="j  name " id="j">
         j
       </h1>
-      <h1 className="a  " id="a">
+      <h1 className="a  name " id="a">
         a
       </h1>
-      <h1 className="s  " id="s">
+      <h1 className="s name " id="s">
         s
       </h1>
-      <h1 className="h  " id="h">
+      <h1 className="h name " id="h">
         h
       </h1>
-      <h1 className="last_a" id="last_a">
+      <h1 className="last_a name" id="last_a">
         a
       </h1>
-      <h1 className="n  " id="n">
+      <h1 className="n  name " id="n">
         n
       </h1>
-      <div className="line"></div>
+      {/* <div className="line name "></div> */}
     </div>
-    </div>
+}    </div>
   );
 }
 

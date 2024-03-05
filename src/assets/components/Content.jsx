@@ -8,55 +8,57 @@ import Chatgpt from "./svg/Chatgpt";
 import Name from "./Name";
 import Whatsapp from "./svg/Whatsapp";
 
-function Content() {
-  const [githubdisplay, setgithubdisplay] = useState(false);
-  const [whatsappdisplay, setwhatsappdisplay] = useState(false);
-  const [chatgptdisplay, setchatgptdisplay] = useState(false);
-  const [spotifydisplay, setspotifydisplay] = useState(false);
-  const [, set] = useState(false);
+function Content({display,setdisplay,checkboxStates}) {
+  // const [display.githubdisplay, setdisplay.githubdisplay] = useState(false);
+  // const [whatsappdisplay, setwhatsappdisplay] = useState(false);
+  // const [chatgptdisplay, setchatgptdisplay] = useState(false);
+  // const [spotifydisplay, setspotifydisplay] = useState(false);
+  // const [, set] = useState(false);
   const displaygithub = () => {
-    setgithubdisplay(true);
-    // console.log("ture");
+    setdisplay({ ...display, githubdisplay: true });
+    console.log("true");
   };
+
   const nondisplaygithub = () => {
-    setgithubdisplay(false);
-    // console.log(false);
+    setdisplay({ ...display, githubdisplay: false });
   };
+
   const spotifyenter = () => {
-    setspotifydisplay(true);
-    // console.log(false);
+    setdisplay({ ...display, spotifydisplay: true });
   };
+
   const spotifyleave = () => {
-    setspotifydisplay(false);
-    // console.log(false);
+    setdisplay({ ...display, spotifydisplay: false });
   };
+
   const whatsappenter = () => {
-    setwhatsappdisplay(true);
-    // console.log(false);
+    setdisplay({ ...display, whatsappdisplay: true });
   };
+
   const whatsappleave = () => {
-    setwhatsappdisplay(false);
-    // console.log(false);
+    setdisplay({ ...display, whatsappdisplay: false });
   };
+
   const chatgptenter = () => {
-    setchatgptdisplay(true);
-    // console.log(false);
+    setdisplay({ ...display, chatgptdisplay: true });
   };
+
   const chatgptleave = () => {
-    setchatgptdisplay(false);
-    // console.log(false);
+    setdisplay({ ...display, chatgptdisplay: false });
   };
+
+
   return (
     <>
-      { githubdisplay  || chatgptdisplay || whatsappdisplay || spotifydisplay ?"" :<Header/>}
+      {/* { display.githubdisplay  || display.chatgptdisplay || display.whatsappdisplay || display.spotifydisplay ?"" :<Header/>} */}
     {/* <Whatsapp></Whatsapp> */}
     <div className="content">
-    <a
+    {checkboxStates.content && <a
         href="https://web.whatsapp.com/"
         onMouseEnter={whatsappenter}
         onMouseLeave={whatsappleave}
         className={`${
-            spotifydisplay || chatgptdisplay || githubdisplay
+          display.spotifydisplay || display.chatgptdisplay || display.githubdisplay
             ? "none"
             : ""
         }`}
@@ -64,14 +66,14 @@ function Content() {
       >
       
         <Whatsapp/>
-      </a>
-      <a
+      </a>}
+      {checkboxStates.content &&<a
         style={{ height: "100px" }}
         href="https://github.com/Jashanwebsite/"
         onMouseEnter={displaygithub}
         onMouseLeave={nondisplaygithub}
         className={`${
-            spotifydisplay || chatgptdisplay || whatsappdisplay
+          display.spotifydisplay || display.chatgptdisplay || display.whatsappdisplay
             ? "none"
             : ""
         }`}
@@ -79,35 +81,35 @@ function Content() {
       >
       
         <Github  />
-      </a>
-      <a
+      </a>}
+     { checkboxStates.content && <a
         href="https://chat.openai.com/"
         onMouseEnter={chatgptenter}
         onMouseLeave={chatgptleave}
         className={`${
-          githubdisplay || spotifydisplay  || whatsappdisplay
+          display.githubdisplay || display.spotifydisplay  || display.whatsappdisplay
             ? "none"
             : ""
         }`}
         target="_blank"
       >
         <Chatgpt  />
-      </a>
-      <a
+      </a>}
+      {checkboxStates.content &&<a
         href="https://spotify.com"
         onMouseEnter={spotifyenter}
         onMouseLeave={spotifyleave}
         className={`${
-          githubdisplay  || chatgptdisplay || whatsappdisplay
+          display.githubdisplay  || display.chatgptdisplay || display.whatsappdisplay
             ? "none"
             : ""
         }`}
         target="_blank"
       >
         <Spotify  />
-      </a>
-      <div style={{display:`${ githubdisplay  || whatsappdisplay || chatgptdisplay || spotifydisplay ?"none" :""}`}}>
-      <Name/>  
+      </a>}
+      <div style={{display:`${ display.githubdisplay  || display.whatsappdisplay || display.chatgptdisplay || display.spotifydisplay ?"none" :""}`}}>
+      <Name clock ={checkboxStates.clock} name={checkboxStates.name}/>  
       </div>
      
     </div>

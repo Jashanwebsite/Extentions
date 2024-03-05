@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+    left: -100px;
     height: 100px;
     /* background-color: blue; */
     width: 500px;
@@ -23,7 +24,7 @@
     --m1:#fdea09;
     --m2:#e46703;
     --m3:#ac2a04;
-    left: 350px;
+    /* left: 350px; */
 }
 @font-face {
     font-family:  jashan ;
@@ -31,9 +32,9 @@
  
   
 }
-h1{
+.name{
     padding-left: 5px;
-    font-family: Brush Script;
+    font-family: Brush Script,lcd ,jashan;
     color: #212121;
     text-transform: capitalize;
     filter: drop-shadow(0px 0px 10px  white);

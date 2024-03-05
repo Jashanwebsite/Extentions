@@ -1,5 +1,5 @@
 .logo {
-  height: 10em;
+  height: 5em;
   position: absolute;
   /* padding: 2em; */
   top: 35px;
@@ -8,11 +8,11 @@
   transition: all linear .4s;
 }
 .logo.vite {
-  height: 20em;
+  height: 205px;
   position: absolute;
   padding: 2em;
-  top: -45px;
-  left: -76px;
+  top: -46px;
+  left: -113px;
   z-index: 15;
   will-change: filter;
   transition: all linear .4s;

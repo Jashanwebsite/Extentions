@@ -1,6 +1,24 @@
-  body{
-  background-color: #212121;
-  min-height: 100vh;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  background-image: radial-gradient(
+      circle at 0% 0%,
+      #191e24 7%,
+      #232a31 100.2%
+    ),
+    radial-gradient(circle at 100% 0%, #191e24 7%, #232a31 100.2%),
+    radial-gradient(
+      circle at 100% 100%,
+      #191e24 7%,
+      #232a31 100.2%
+    ),
+    radial-gradient(circle at 0% 100%, #191e24 7%, #232a31 100.2%);
+  background-position: top left, top right, bottom right, bottom left;
+  background-size: 50% 50%;
+  background-repeat: repeat-x;
+
+  height: 100vh;
   min-width: 100%;
   overflow: hidden;
 }
@@ -14,7 +32,7 @@ a:hover {
 }
 .logo_container {
   margin: 0;
-  min-height:100px ;
+  min-height: 100px;
   height: 200px;
   min-width: 90%;
   display: flex;
@@ -27,43 +45,37 @@ a:hover {
   width: 50%;
   /* background-color: red; */
   display: flex;
+  /* cursor: red; */
   justify-content: space-between;
   align-items: center;
+  /* border: 2px solid red; */
   padding-inline: 20px;
-  background: #212121;
+  
+}
+.input_container:hover{
+/* background: #212121;  */
+  border-bottom: 2px solid #ffffff;
 }
 
-.input_container::before {
-  content: '';
-  position: absolute;
-  top: 0px; 
-  left: 0px; 
-  right: 0px; 
-  bottom: -2px; 
-  z-index: -1;
-  background: linear-gradient(-1350deg, #2980b9, #6bb5ba,#ffffff);
-  border-radius: 10px; /* Adjust to match the border radius */
-}
-
-
-.input_container input{
+.input_container input {
   outline: none;
   border: none;
   background-color: transparent;
   height: 100%;
+  cursor: text;
   position: relative;
   width: 80%;
+  z-index:10;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.952);
   text-wrap: wrap;
 }
-.search_svg{
+.search_svg {
   margin-right: 20px;
   fill: #646cff;
 }
-.search_svg:hover{
-
+.search_svg:hover {
   /* border: 2px solid white; */
 
-  box-shadow:inset 0 0 12px 1px #fcfcfcaa;
+  box-shadow: inset 0 0 12px 1px #fcfcfcaa;
 }
